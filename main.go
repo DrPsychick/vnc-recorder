@@ -203,7 +203,7 @@ func recorder(c *cli.Context) error {
 			logrus.Error("VNC connection error: ", err)
 			vcodec.Close()
 			// give some time to write the file
-			time.Sleep(time.Second * 1)
+			time.Sleep(time.Second * 2)
 			os.Exit(1)
 		case msg := <-cchClient:
 			logrus.WithFields(logrus.Fields{
